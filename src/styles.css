@@ -1,1 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    font-family: 'Montserrat', sans-serif;
+    }
+
+    .box {
+    display: block;
+    text-align: center;
+    
+    }
+
+    body {
+    margin: 0;
+    background-color: rgb(255, 242, 234);
+    }
+
+    li{
+        list-style: none;
+    }
+    
+
+    .head {
+    background-color: #14213d;
+    color: #e5e5e5;
+    padding-top: 1rem;
+    font-size: 12px;
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    }
+
+    .logoAP{
+        width: 95px;
+        height: auto;
+    }
+
+    #yo {
+    width: auto;
+    height: 120px;
+    border-radius: 100%;
+    border: black;
+    border-style: solid;
+    }
+
+    .head h1 {
+        display: inline-flex;
+        flex-wrap: wrap-reverse;
+    }
+    
+
+    #navbarSupportedContent{
+        justify-content: end;
+    }
+
+    .box_secundaria{
+        margin: 0;
+        padding: 1px;
+        background-color: #e5e5e5;
+        border-radius: 3%;
+        border-color: #CEEAF8;
+        text-align: center;
+    }
+
+    .box_secundaria {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .sobre_mi {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+        i.fa-brands.fa-linkedin-in:hover {
+          color: #14213d8e;
+          transition: 0.4s;
+          
+        }
+
+        i.fa-brands.fa-github-alt:hover{
+          color: #14213d8e;
+          transition: 0.4s;
+        }
+
+        i.fas.fa-gears:hover{
+          color: #14213d8e;
+          transition: 0.4s;
+        }
+
+        .list-group.list-group-horizontal{
+          --bs-list-group-border-color: transparent;
+        }
+
+        .banner{
+          margin-bottom: -5%  ;
+        }
+
+        .foto_nombre{
+          margin-left: 3%;
+        }
+
+        .sobre_mi {
+          margin-left: 3%;
+        }
+
+        a:link{
+          color: #14213d8e;
+          text-decoration: none;
+        }
+
+        .experiencia {
+          text-align: left;
+        }
+  
+  .foto_nombre h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 5rem;
+  }
