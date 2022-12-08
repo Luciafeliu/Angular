@@ -13,6 +13,11 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { RedesComponent } from './componentes/redes/redes.component';
+import { AdministradorComponent } from './componentes/administrador/administrador.component';
+import { ErrorComponent } from './componentes/error/error.component';
+import { IndexComponent } from './componentes/index/index.component';
+import { HeaderadminComponent } from './componentes/headeradmin/headeradmin.component';
+import { LogoutComponent } from './modales/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { RedesComponent } from './componentes/redes/redes.component';
     SkillsComponent,
     ProyectosComponent,
     FooterComponent,
-    RedesComponent
+    RedesComponent,
+    AdministradorComponent,
+    ErrorComponent,
+    IndexComponent,
+    HeaderadminComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
