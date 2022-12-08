@@ -18,6 +18,20 @@ import { ErrorComponent } from './componentes/error/error.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { HeaderadminComponent } from './componentes/headeradmin/headeradmin.component';
 import { LogoutComponent } from './modales/logout/logout.component';
+import { FotoinfoComponent } from './modales/fotoinfo/fotoinfo.component';
+import { InfopersonalComponent } from './componentes/administrador/infopersonal/infopersonal.component';
+import { BanneradminComponent } from './componentes/administrador/banneradmin/banneradmin.component';
+import { InfoComponent } from './modales/info/info.component';
+import { ExpComponent } from './modales/exp/exp.component';
+import { ExpadminComponent } from './componentes/administrador/expadmin/expadmin.component';
+import { EducacionadminComponent } from './componentes/administrador/educacionadmin/educacionadmin.component';
+import { EdComponent } from './modales/ed/ed.component';
+import { HabilidadesadminComponent } from './componentes/administrador/habilidadesadmin/habilidadesadmin.component';
+import { HabilidadComponent } from './modales/habilidad/habilidad.component';
+import { ProyectosadminComponent } from './componentes/administrador/proyectosadmin/proyectosadmin.component';
+import { ProyectsComponent } from './modales/proyects/proyects.component';
+import { FooteradminComponent } from './componentes/administrador/footeradmin/footeradmin.component';
+import { ContactoComponent } from './modales/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +50,21 @@ import { LogoutComponent } from './modales/logout/logout.component';
     ErrorComponent,
     IndexComponent,
     HeaderadminComponent,
-    LogoutComponent
+    LogoutComponent,
+    FotoinfoComponent,
+    InfopersonalComponent,
+    BanneradminComponent,
+    InfoComponent,
+    ExpComponent,
+    ExpadminComponent,
+    EducacionadminComponent,
+    EdComponent,
+    HabilidadesadminComponent,
+    HabilidadComponent,
+    ProyectosadminComponent,
+    ProyectsComponent,
+    FooteradminComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
