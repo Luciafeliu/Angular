@@ -1,0 +1,75 @@
+{
+    "nombre":"Lucía",
+    "apellido":"Feliú",
+    "ocupacion":"Full Stack Developer Jr.",
+    "descripcion":"Actualmente estudiando Arquitectura en la Universidad Nacional de Córdoba, Argentina. Realizando el curso de Argentina Programa, #YoProgramo.",
+
+
+    "estudios": [ 
+    {
+        "id":1,
+        "titulo":"(Bachiller en Comunicación)",
+        "institucion":"Instituto Nuestra Señora de las Mercedes, Unquillo",
+        "estado":"Secundario completo:",
+        "inicio":2014,
+        "fin": "/2020",
+        "descripcion":"Egresada del "
+    },
+    {
+        "id":2,
+        "titulo":"(Arquitecta)",
+        "institucion":"UNC",
+        "estado":"En curso:",
+        "inicio":2020,
+        "fin": "/Actualidad",
+        "descripcion":"Arquitectura, Urbanismo y Diseño, "
+    },
+    {
+        "id":3,
+        "titulo":" ",
+        "institucion":"Argentina Programa",
+        "estado":"Finalizado.",
+        "inicio":2021,
+        "fin": "/2021",
+        "descripcion":"Curso #SéProgramar, "
+    },
+    {
+        "id":4,
+        "titulo":"(Full Stack Developer Jr.)",
+        "institucion":"Argentina Programa",
+        "estado":"En curso:",
+        "inicio":2022,
+        "fin": "/Actualidad",
+        "descripcion":"Curso #YoProgramo, "
+    }
+    ],
+    "experiencia": [
+    {
+        "id":1,
+        "inicio":2019,
+        "fin": 2019,
+        "titulo":"Pasantía en Municipalidad de Unquillo",
+        "area":"Área de comunicación",
+        "descripcion":"Encargada de recolectar fotos, testimonios, para notas en la página oficial. Administración y organización de archivos."
+    },
+    {
+        "id":2,
+        "inicio":2019,
+        "fin": "/Actualidad",
+        "titulo":"Revista Autozoom",
+        "area":"Diseño gráfico de publicidades",
+        "descripcion":"Edición de fotos para clientes, folletos, tarjetas y páginas de la revista. "
+
+    },
+    {
+        "id":3,
+        "inicio":2020,
+        "fin": 2021,
+        "titulo":"Santa Rita Handmade",
+        "area":"Diseño y colaboración en equipo para la realización de un emprendimiento online.",
+        "descripcion":"Edición de fotografía. Creación de publicaciones mensuales. Creación de página web. "
+
+    }
+ ]
+
+}
