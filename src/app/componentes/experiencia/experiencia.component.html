@@ -1,14 +1,13 @@
 <div class="box_secundaria">
     <h2> <b>Experiencia</b> </h2>
     <p class="contenedor_principal">
-       <ul>
-           <li class="lista"><b>2019  Pasantía en Municipalidad de Unquillo</b> <br> Área de Comunicación </li>
-           <li>Encargada de recolectar fotos, testimonios, para notas en la página oficial.</li>
-           <li>Administración y organización de archivos.</li>
+       <ul *ngFor="let experiencia of experiencia" >
+           <li class="lista"><b>{{experiencia.inicio}} {{experiencia.titulo}}</b> <br> {{experiencia.area}} </li>
+           <li>{{experiencia.descripcion}}</li>
            <br>
            <br>
-           <li class="lista"> <b>2019/Actualidad   Revista "Autozoom"</b> <br>Diseño gráfico de publicidades </li>
-           <li>Edición de fotos para clientes, folletos, tarjetas y páginas de la revista.</li>
+           <li class="lista"> <b>{{experiencia.id2.inicio}}/{{experiencia.fin}}   {{experiencia.id2.titulo}}</b> <br>{{experiencia.id2.area}}</li>
+           <li>{{experiencia.id2.descripcion}}</li>
            <br>
            <br>
            <li class="lista"> <b>2020/2021   "Santa Rita Handmade"</b> <br>Diseño y colaboración en equipo para la realización de un emprendimiento online. </li>
