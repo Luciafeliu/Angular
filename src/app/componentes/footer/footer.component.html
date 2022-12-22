@@ -1,6 +1,5 @@
-<footer>
+<footer *ngFor="let footers of boton">
 
-    <button type="button" class="btn btn-light"><a href="#"><b>Contactame</b></a></button>
-      <a href="#"> <b>Sobre mi</b> </a>
+    <button type="button" class="btn btn-light"><a href="#"><b>{{footers.boton}}</b></a></button>
 
-   </footer>
+</footer>

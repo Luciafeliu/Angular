@@ -1,21 +1,12 @@
-<div class="box_secundaria">
-    <h2> <b>Experiencia</b> </h2>
-    <p class="contenedor_principal">
-       <ul *ngFor="let experiencia of experiencia" >
-           <li class="lista"><b>{{experiencia.inicio}} {{experiencia.titulo}}</b> <br> {{experiencia.area}} </li>
-           <li>{{experiencia.descripcion}}</li>
-           <br>
-           <br>
-           <li class="lista"> <b>{{experiencia.id2.inicio}}/{{experiencia.fin}}   {{experiencia.id2.titulo}}</b> <br>{{experiencia.id2.area}}</li>
-           <li>{{experiencia.id2.descripcion}}</li>
-           <br>
-           <br>
-           <li class="lista"> <b>2020/2021   "Santa Rita Handmade"</b> <br>Diseño y colaboración en equipo para la realización de un emprendimiento online. </li>
-            <li>Edición de fotografía.</li>
-            <li>Creación de publicaciones mensuales.</li>
-            <li>Creación de página web.</li>
+<h2 class="titulo_exp"> <b>Experiencia</b> </h2>
+<div class="box_secundaria" *ngFor="let experiencias of experiencies">
+    <div class="contenedor_principal" >
+       <ul>
+           <li class="lista"><b>{{ experiencias.inicio }} {{ experiencias.titulo }}</b> <br> {{ experiencias.area }} </li>
+           <li>{{ experiencias.descripcion }}</li>
+      
         </ul>
-  
+
 
   </div>
   <br>

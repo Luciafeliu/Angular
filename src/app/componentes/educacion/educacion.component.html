@@ -1,16 +1,11 @@
+<h2 class="titulo_exp">Educación</h2>
 <div class="box_secundaria">
-    <h2>Educación</h2>
-    <div class="textos">
+    <div class="textos" *ngFor="let estudios of educaciones">
         <ul>
-       <li>2014/2020 - <b>Secundario completo:</b> Egresada del Instituto Nuestra Señora de las Mercedes, Unquillo (Bachiller en Comunicación).</li>
-       <br>
-        <li>2020/Actualidad - <b>En curso:</b> Arquitectura, Urbanismo y Diseño, UNC. </li>
-        <br>
-        <li>2021 - Curso #SéProgramar, Argentina Programa.</li>
-        <br>
-        <li>2022/Actualidad -<b>En curso:</b> Curso #YoProgramo, Argentina Programa.</li>
+       <li>{{ estudios.inicio }}{{ estudios.fin }}- <b>{{ estudios.estado }}</b>{{ estudios.descripcion }} {{ estudios.institucion }}</li>
+
+
         </ul>
     </div>
 
   </div>
-  <br>

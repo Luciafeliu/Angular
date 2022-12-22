@@ -7,10 +7,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DatosService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private datos:HttpClient) { }
 
-  getDatos():Observable<any> {
+  getDatos():Observable<any>{
 
-    return this.http.get('./assets/json/datos.json');
+    return this.datos.get('./assets/json/datos.json');
 }
 }

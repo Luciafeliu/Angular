@@ -52,6 +52,12 @@ html {
         justify-content: end;
     }
 
+    .titulo_exp {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #e5e5e5;
+      margin-bottom: 0;
+    }
     .box_secundaria{
         margin: 0;
         padding: 1px;
