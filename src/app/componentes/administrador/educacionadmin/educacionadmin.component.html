@@ -1,19 +1,15 @@
  <!--Educacion-->
  <div class="box_secundaria"> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#edModal"><i class="fa-solid fa-pencil"></i></button> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#edModal"><i class="fa-solid fa-xmark"></i></button>
-    <h2>Educación</h2>
-    <div class="textos">
-        <ul>
-       <li>2014/2020 - <b>Secundario completo:</b> Egresada del Instituto Nuestra Señora de las Mercedes, Unquillo (Bachiller en Comunicación).</li>
-       <br>
-        <li>2020/Actualidad - <b>En curso:</b> Arquitectura, Urbanismo y Diseño, UNC. </li>
-        <br>
-        <li>2021 - Curso #SéProgramar, Argentina Programa.</li>
-        <br>
-        <li>2022/Actualidad -<b>En curso:</b> Curso #YoProgramo, Argentina Programa.</li>
-        </ul>
+  <h2 class="titulo_exp">Educación</h2>
+  <div class="box_secundaria">
+      <div class="textos" *ngFor="let estudios of educaciones">
+          <ul>
+         <li>{{ estudios.inicio }}{{ estudios.fin }}- <b>{{ estudios.estado }}</b>{{ estudios.descripcion }} {{ estudios.institucion }}</li>
+  
+  
+          </ul>
+      </div>
+  
     </div>
-
-  </div>
-  <br>
 
   <app-ed></app-ed>
