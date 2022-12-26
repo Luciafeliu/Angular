@@ -2,15 +2,14 @@
 <!--Foto e info-->
 
 <div class="foto_nombre">
-  <img id="yo" src="../assets/foto.jpg" alt="Lucía Feliú">
-  <h2>{{ nombre }} {{ apellido }}</h2>
+  <img id="yo" src="../assets/foto.jpg" alt="Lucía Feliú"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#fotoinfoModal"><i class="fa-solid fa-pencil"></i></button> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#fotoinfoModal"><i class="fa-solid fa-xmark"></i></button>
+  <h2>{{ nombre }} {{ apellido }}</h2><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#nombreModal"><i class="fa-solid fa-pencil"></i></button> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#nombreModal"><i class="fa-solid fa-xmark"></i></button>
 </div>
 <div class="sobre_mi"> 
   
-  <h3>{{ ocupacion }}</h3>
+  <h3>{{ ocupacion }}</h3> 
   <p> {{ descripcion }} <br> Realizando el curso de Argentina Programa, #YoProgramo.
-  </p>
-
+  </p><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="fa-solid fa-pencil"></i></button> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="fa-solid fa-xmark"></i></button>
 </div>
     <app-fotoinfo></app-fotoinfo>
     <app-info></app-info>

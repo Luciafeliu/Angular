@@ -1,7 +1,7 @@
 <h2 class="titulo_exp"> <b>Experiencia</b> </h2>
 <div class="box_secundaria" *ngFor="let experiencias of experiencies">
-    <div class="contenedor_principal" >
-       <ul>
+    <div class="contenedor_principal" > 
+       <ul><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#expModal"><i class="fa-solid fa-pencil"></i></button> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#borrarexpModal"><i class="fa-solid fa-xmark"></i></button>
            <li class="lista"><b>{{ experiencias.inicio }} {{ experiencias.titulo }}</b> <br> {{ experiencias.area }} </li>
            <li>{{ experiencias.descripcion }}</li>
       
