@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { FooterService } from 'src/app/servicios/footer.service';
+import { Footer } from '../entidades/footer';
 
 @Component({
   selector: 'app-footer',
@@ -7,13 +8,16 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit{
-  boton: any;
-  constructor(private datos: DatosService){ }
+  footer : Footer []=[];
+
+  constructor(private sFooter: FooterService){ }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(data => {
-      this.boton = data.footers;
-    })
+  this.cargarFooter();
+  }
+
+  public cargarFooter(): void {
+    this.sFooter.list().subscribe(data => {this.footer=data});
   }
 
 }

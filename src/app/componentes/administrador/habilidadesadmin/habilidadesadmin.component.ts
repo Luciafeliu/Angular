@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { HabilidadService } from 'src/app/servicios/habilidad.service';
+import { Habilidad } from '../../entidades/habilidad';
+
 
 @Component({
   selector: 'app-habilidadesadmin',
@@ -7,15 +9,16 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./habilidadesadmin.component.css']
 })
 export class HabilidadesadminComponent implements OnInit{
-  skills: any;
-  porcentaje : any;
-  constructor(private datos: DatosService){ }
+  habilidad : Habilidad []=[];
+
+  constructor(private sHabilidad: HabilidadService){ }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(data => {
-      this.skills = data.habilidades;
-      this.porcentaje = data.porcentaje;
-    })
+  this.cargarHabilidad();
+  }
+
+  public cargarHabilidad(): void {
+    this.sHabilidad.list().subscribe(data => {this.habilidad=data});
   }
 
 }

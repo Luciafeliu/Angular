@@ -1,9 +1,14 @@
 <h2 class="titulo_exp">Habilidades <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#habilidadModal"><i class="fa-solid fa-pencil"></i></button> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#habilidadModal"><i class="fa-solid fa-xmark"></i></button></h2>
-<div class="box_secundaria" *ngFor="let habilidades of skills">
-    <div class="progress" style="height: 20px;">
-      <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style= "width: {{ habilidades.porcentaje }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ habilidades.nombre }}</div>
-    </div>
-    <br>
+<div class="box_secundaria" *ngFor="let habilidad of habilidad">
+  <circle-progress class="img-fluid" [percent]="habilidad.procentaje" titleFontSize=50 unitsFontSize=30 titleColor="white"
+  unitsColor="white" [showSubtitle]="false" [radius]="100" [outerStrokeWidth]="12"
+  [innerStrokeWidth]="5" [space]=10 [outerStrokeGradient]="true"
+  [outerStrokeGradientStopColor]="'#cc0f7d'" [outerStrokeColor]="'#e189b8'"
+  [innerStrokeColor]="'#bcb8ba'" [animation]="true" [animationDuration]="700">
+</circle-progress>
+<br>
+<h4>{{habilidad.nombre}}</h4>
+<br>  
  </div>
  <br>
 

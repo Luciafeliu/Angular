@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { ProyectoService } from 'src/app/servicios/proyecto.service';
+import { Proyecto } from '../entidades/proyecto';
+
 
 @Component({
   selector: 'app-proyectosnm',
@@ -8,15 +10,16 @@ import { DatosService } from 'src/app/servicios/datos.service';
 })
 
 export class ProyectosComponent implements OnInit{
-  proyectos: any;
-  imagen : any;
-  constructor(private datos: DatosService){ }
+  proyecto : Proyecto []=[];
+
+  constructor(private sProyecto: ProyectoService){ }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(data => {
-      this.proyectos = data.proyectos;
-      this.imagen = data.imagen;
-    })
+  this.cargarProyecto();
+  }
+
+  public cargarProyecto(): void {
+    this.sProyecto.list().subscribe(data => {this.proyecto=data});
   }
 
 }

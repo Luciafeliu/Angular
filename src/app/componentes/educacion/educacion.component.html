@@ -1,8 +1,8 @@
 <h2 class="titulo_exp">Educación</h2>
 <div class="box_secundaria">
-    <div class="textos" *ngFor="let estudios of educaciones">
+    <div class="textos" *ngFor="let estudio of educacion">
         <ul>
-       <li>{{ estudios.inicio }}{{ estudios.fin }}- <b>{{ estudios.estado }}</b>{{ estudios.descripcion }} {{ estudios.institucion }}</li>
+       <li>{{ estudio.inicio }}/{{ estudio.fin }}- <b>{{ estudio.estado }}</b>{{ estudio.descripcion }} {{ estudio.institucion }}</li>
 
 
         </ul>
