@@ -3,6 +3,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Token } from '@angular/compiler';
+import { NuevoUsuario } from '../componentes/entidades/nuevo-usuario';
+import { LoginUsuario } from '../componentes/entidades/login-usuario';
+import { JwtDto } from '../componentes/entidades/jwt-dto';
 
 
 @Injectable({
@@ -10,32 +13,15 @@ import { Token } from '@angular/compiler';
 })
 export class AuthService {
 
-  uri = 'http://localhost:4200/index';
-  token = localStorage.getItem('token'); 
+  authURL = 'http://localhost:8080/auth/';
 
-  constructor(private http: HttpClient,private router: Router) { }
+ constructor(private httpClient: HttpClient){ }
 
-  login(email: string,password: string){
-    this.http.post(this.uri + '/authenticate', {email: email, password: password})
-    .subscribe((resp:any)=> {
-      //redireccionamos el usuario a su perfil
-      this.router.navigate(['profile']);
-      //guardamos el token en localStorage
-      localStorage.setItem('auth_token', resp.token);
+ public nuevo(nuevoUsuario: NuevoUsuario):Observable<any>{
+  return this.httpClient.post<any>(this.authURL + 'nuevo', nuevoUsuario);
+ }
 
-    })
-
-  }
-
-
-  logout () {
-    localStorage.removeItem('token');
-
-  }
-
-  public get logIn(): boolean {
-     return (localStorage.getItem('token') !== null);
-
-  }
-
+ public login(loginUsuario: LoginUsuario): Observable<JwtDto>{
+  return this.httpClient.post<JwtDto>(this.authURL + 'login', loginUsuario);
+ }
 }
