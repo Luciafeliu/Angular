@@ -19,10 +19,9 @@
             <input type="password" id="password"  class="form-control form-control-lg" [(ngModel)]="password" name="password" required>
           </div>
 
-          <button class="btn btn-outline-dark btn-lg px-5" data-bs-dismiss="modal" type="submit">Login</button>
-  
-        </form>
+          <button class="btn btn-outline-dark btn-lg px-5" data-bs-dismiss="modal" (click)="onEnviar()" type="submit">Login</button>
 
+        </form>
       </div>
       <div class="modal-footer">
         <p class="mb-0">¿No estás registrado? <a href="#!" class="text-black-50 fw-bold">Registrate</a></p>

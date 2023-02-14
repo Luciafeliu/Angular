@@ -33,6 +33,15 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+  onEnviar(){
+    if(this.tokenService.getUserName() == "admin"){
+     return this.router.navigate(['/administrador']);
+    } else {
+      return this.router.navigate(['/index']);
+    }
+  }
+
   onLogin():void{
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
         this.authService.login(this.loginUsuario).subscribe(

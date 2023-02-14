@@ -7,9 +7,7 @@ import { AuthGuard } from './servicios/auth.guard';
 
 const routes: Routes = [
   {path: 'index', component:IndexComponent},
-  {path: 'administrador', 
-  component:AdministradorComponent, 
-  canActivate: [AuthGuard]},
+  {path: 'administrador', component:AdministradorComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/index', pathMatch: 'full'},
   {path: '**', component:ErrorComponent}
 ];
