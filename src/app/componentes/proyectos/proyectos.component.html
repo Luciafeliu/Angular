@@ -1,13 +1,14 @@
 <!--Proyectos-->
 <h2 class="titulo_exp"> <b>Mis proyectos:</b> </h2>
 <div class="box_secundaria" >
-    
-    <div class="card" style="width: 18rem;" *ngFor="let proyecto of proyecto">
-      <img [src]="proyecto.imagen" class="card-img-top" alt="Este portfolio">
-      <div class="card-body">
-        <h5 class="card-title">{{ proyecto.nombre }}</h5>
-        <p class="card-text">{{ proyecto.descripcion }}</p>
-        <a href="/index" class="btn btn-dark">Ir al inicio</a>
+    <div class="row">
+      <div class="card" style="width: 18rem;" *ngFor="let proyecto of proyecto">
+        <img [src]="proyecto.imagen" class="card-img-top" alt="Este portfolio">
+        <div class="card-body">
+          <h5 class="card-title">{{ proyecto.nombre }}</h5>
+          <p class="card-text">{{ proyecto.descripcion }}</p>
+          <a href="/index" class="btn btn-dark">Ir al inicio</a>
+        </div>
       </div>
     </div>
 </div>
