@@ -20,7 +20,7 @@ export class HabilidadService {
   }
 
   public save(habilidad: Habilidad):Observable<any>{
-    return this.httpClient.post<any>(this.url + 'create', habilidad);
+    return this.httpClient.post<any>(this.url + 'crear', habilidad);
   }
 
   public update(id:number, habilidad: Habilidad):Observable<any>{
@@ -28,7 +28,7 @@ export class HabilidadService {
   }
 
   public delete(id:number):Observable<any>{
-    return this.httpClient.delete<any>(this.url + `delete/${id}`);
+    return this.httpClient.delete<any>(this.url + `borrar/${id}`);
   }
 
 }

@@ -8,18 +8,24 @@
         </div>
         <div class="modal-body">
           <form [formGroup]="educacionForm" (ngSubmit)="agregarEstudio()" method="POST" novalidate #form="ngForm">
-            <input class="form-control" type="text" placeholder="Título y años input" aria-label="default input example">
-            <br>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+            <input class="form-control" type="text" placeholder="Agregar una descripción de la educación" name="descripcion" id="descripcionEd" formControlName="descripcion" aria-label="default input example">
+              <br>
+              <input class="form-control" type="text" placeholder="Agregar el estado" name="estado" id="estadoEd" formControlName="estado" aria-label="default input example">
+              <br>
+              <input class="form-control" type="number" placeholder="año de fin" name="fin" id="finEd" formControlName="fin" aria-label="default input example">
+              <br>
+              <input class="form-control" type="number" placeholder="año de inicio " name="inicio" id="inicioEd" formControlName="inicio" aria-label="default input example">
+              <br>
+              <input class="form-control" type="text" placeholder="Agregar la institución" name="institucion" id="institucionEd" formControlName="institucion" aria-label="default input example">
+              <br>
+              <input class="form-control" type="text" placeholder="Agregar un título" name="titulo" id="tituloEd" formControlName="titulo" aria-label="default input example">
+              <br>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+                <button type="button" (click)="limpiar()" class="btn btn-primary">Limpiar</button>
+              </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
-          <button type="button" class="btn btn-primary">Agregar</button>
         </div>
       </div>
     </div>

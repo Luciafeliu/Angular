@@ -21,4 +21,18 @@ export class HabilidadesadminComponent implements OnInit{
     this.sHabilidad.list().subscribe(data => {this.habilidad=data});
   }
 
+  delete(id?: number){
+    if(id != undefined){
+      this.sHabilidad.delete(id).subscribe(
+        data => {
+          this.cargarHabilidad();
+          alert("Se ha eliminado la habilidad correctamente");
+          window.location.reload();
+        }, err => {
+          alert("No se ha podido eliminar la habilidad");
+        }
+      )
+    }
+  }
+
 }

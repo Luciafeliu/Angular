@@ -1,10 +1,11 @@
  <!--Educacion-->
  <div class="box_secundaria"> 
-    <h2 class="titulo_exp">Educación</h2>
+    <h2 class="titulo_exp">Educación
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#edModal"><i class="fa-solid fa-plus"></i></button> 
+    </h2>
   <div class="box_secundaria">
       <div class="textos" *ngFor="let educacion of educacion">
           <ul>
-            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#edModal"><i class="fa-solid fa-pencil"></i></button> 
             <button type="submit"  class="btn btn-dark" (click)="delete(educacion.id)"><i class="fa-solid fa-xmark"></i></button>        
          <li>{{ educacion.inicio }}{{ educacion.fin }}- <b>{{ educacion.estado }}</b>{{ educacion.descripcion }} {{ educacion.institucion }}</li>
   
