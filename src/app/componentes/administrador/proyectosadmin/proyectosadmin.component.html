@@ -1,20 +1,21 @@
 <h2 class="titulo_exp"> <b>Mis proyectos:</b> </h2>
 <div class="box_secundaria" >
     <div class="row">
-    <div class="card" style="width: 18rem;" *ngFor="let proyectos of proyectos">
-      <img [src]="proyectos.imagen" class="card-img-top" alt="Este portfolio">
+    <div class="card" style="width: 18rem;" *ngFor="let proyecto of proyecto">
+      <img [src]="proyecto.imagen" class="card-img-top" alt="Este portfolio">
       <div class="card-body">
-        <h5 class="card-title">{{ proyectos.nombre }}</h5>
-        <p class="card-text">{{ proyectos.descripcion }}</p>
-        <a href="http://127.0.0.1:5500/PortfolioFrontEnd/administrador.html" class="btn btn-dark">{{ proyectos.boton }}</a>
+        <h5 class="card-title">{{ proyecto.nombre }}</h5>
+        <p class="card-text">{{ proyecto.descripcion }}</p>
+        <a href="/index" class="btn btn-dark">Ir al inicio</a>
+        <button type="submit"  class="btn btn-dark" (click)="delete(proyecto.id)"><i class="fa-solid fa-xmark"></i></button>        
       </div>
     </div>
   <div class="col-sm-6">
     <div class="card" style="width: 18rem;">
       <img src="../../../../assets/colorgris.png" class="card-img-top" alt="Ingresar imagen">
       <div class="card-body">
-        <h5 class="card-title">Agregar proyecto</h5>
-        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#proyectosModal"><i class="fa-solid fa-pencil"></i></button> <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#proyectosModal"><i class="fa-solid fa-xmark"></i></button>
+        <h5 class="card-title"> Agregar proyecto</h5>
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#proyectosModal"><i class="fa-solid fa-plus"></i></button> 
       </div>
     </div>
   </div>

@@ -20,7 +20,7 @@ export class ProyectoService {
   }
 
   public save(proyecto: Proyecto):Observable<any>{
-    return this.httpClient.post<any>(this.url + 'create', proyecto);
+    return this.httpClient.post<any>(this.url + 'crear', proyecto);
   }
 
   public update(id:number, proyecto: Proyecto):Observable<any>{
@@ -28,7 +28,7 @@ export class ProyectoService {
   }
 
   public delete(id:number):Observable<any>{
-    return this.httpClient.delete<any>(this.url + `delete/${id}`);
+    return this.httpClient.delete<any>(this.url + `borrar/${id}`);
   }
 
 }
