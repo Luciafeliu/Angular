@@ -3,46 +3,30 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="expModalLabel">Cambiar experiencia</h1>
+          <h1 class="modal-title fs-5" id="expModalLabel">Agregar una experiencia</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input class="form-control" type="text" placeholder="Título y año input" aria-label="default input example">
-          <br>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Agregar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
+          <form [formGroup]="experienciaForm" (ngSubmit)="agregarExperiencia()" method="POST" novalidate #form="ngForm">
+              <input class="form-control" type="text" placeholder="Agregar el área de la experiencia" name="area" id="areaExp" formControlName="area" aria-label="default input example">
+              <br>
+              <input class="form-control" type="text" placeholder="Agregar una descripción" name="descripcion" id="descripcionExp" formControlName="descripcion" aria-label="default input example">
+              <br>
+              <input class="form-control" type="number" placeholder="año fin input" name="fin" id="finExp" formControlName="fin" aria-label="default input example">
+              <br>
+              <input class="form-control" type="number" placeholder="año inicio input" name="inicio" id="inicioExp" formControlName="inicio" aria-label="default input example">
+              <br>
+              <input class="form-control" type="text" placeholder="Agregar un título" name="titulo" id="tituloExp" formControlName="titulo" aria-label="default input example">
+              <br>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" >Agregar</button>
+                <button type="button" (click)="limpiar()" class="btn btn-primary">Limpiar</button>
+              </div> 
+          </form>
         </div>
       </div>
     </div>
   </div>
 
-  <!--Modal de eliminar de experiencia-->
-  <div class="modal fade" id="borrarexpModal" tabindex="-1" aria-labelledby="borrarexpModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="borrarexpModalLabel">Eliminar experiencia</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Buscar</option>
-            <option value="1">2019</option>
-            <option value="2">2019/Actualidad</option>
-            <option value="3">2020/2021</option>
-          </select>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Borrar y guardar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  

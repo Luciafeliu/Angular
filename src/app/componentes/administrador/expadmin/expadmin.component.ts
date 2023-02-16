@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { Experiencia } from '../../entidades/experiencia';
+
 
 @Component({
   selector: 'app-expadmin',
@@ -7,16 +9,32 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./expadmin.component.css']
 })
 export class ExpadminComponent implements OnInit{
-  experiencies: any;
-  nombresito : string = '';
-  fecha : any;
-  constructor(private datos: DatosService){ }
+ 
+  experiencia: Experiencia []=[];
+
+  constructor(private sExperiencia: ExperienciaService){ }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(data => {
-      this.experiencies = data.experiencias;
-      this.nombresito = data.nombre;
-    })
+  this.cargarExperiencia();
   }
+
+  public cargarExperiencia(): void {
+    this.sExperiencia.list().subscribe(data => {this.experiencia=data});
+  }
+
+  delete(id?: number){
+    if(id != undefined){
+      this.sExperiencia.delete(id).subscribe(
+        data => {
+          this.cargarExperiencia();
+          alert("Se ha eliminado la experiencia correctamente");
+          window.location.reload();
+        }, err => {
+          alert("No se ha podido eliminar la experiencia");
+        }
+      )
+    }
+  }
+  
 
 }

@@ -9,7 +9,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-  experiencies: Experiencia []=[];
+  experiencia: Experiencia []=[];
 
   constructor(private sExperiencia: ExperienciaService){ }
 
@@ -20,7 +20,7 @@ export class ExperienciaComponent implements OnInit {
   
 
   public cargarExperiencia(): void {
-    this.sExperiencia.list().subscribe(data => {this.experiencies=data});
+    this.sExperiencia.list().subscribe(data => {this.experiencia=data});
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { EducacionService } from 'src/app/servicios/educacion.service';
+import { Educacion } from '../../entidades/educacion';
 
 @Component({
   selector: 'app-educacionadmin',
@@ -7,16 +8,32 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./educacionadmin.component.css']
 })
 export class EducacionadminComponent implements OnInit{
-  educaciones: any;
-  nombresito : string = '';
-  fecha : any;
-  constructor(private datos: DatosService){ }
+  
+  educacion: Educacion []=[];
+
+  constructor(private sEducacion: EducacionService){ }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(data => {
-      this.educaciones = data.estudios;
-      this.nombresito = data.nombre;
-    })
+  this.cargarEstudio();
   }
+
+  public cargarEstudio(): void {
+    this.sEducacion.list().subscribe(data => {this.educacion=data});
+  }
+
+  delete(id?: number){
+    if(id != undefined){
+      this.sEducacion.delete(id).subscribe(
+        data => {
+          this.cargarEstudio();
+          alert("Se ha eliminado el estudio correctamente");
+          window.location.reload();
+        }, err => {
+          alert("No se ha podido eliminar el estudio");
+        }
+      )
+    }
+  }
+  
 
 }

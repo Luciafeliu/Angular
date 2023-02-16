@@ -28,6 +28,6 @@ export class EducacionService {
   }
 
   public delete(id:number):Observable<any>{
-    return this.httpClient.delete<any>(this.url + `delete/${id}`);
+    return this.httpClient.delete<any>(this.url + `borrar/${id}`);
   }
 }

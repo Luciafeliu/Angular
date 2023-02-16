@@ -69,7 +69,7 @@ import { ContactoComponent } from './modales/contacto/contacto.component';
     ProyectosadminComponent,
     ProyectsComponent,
     FooteradminComponent,
-    ContactoComponent
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
