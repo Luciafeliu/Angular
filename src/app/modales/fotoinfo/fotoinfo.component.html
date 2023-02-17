@@ -6,19 +6,27 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="mb-3">
-            <label for="formFileSm" class="form-label">Editar banner</label>
-            <input class="form-control form-control-sm" id="formFileSm" type="file">
-          </div>
-          <div class="mb-3">
-            <label for="formFileSm" class="form-label">Editar foto de perfil</label>
-            <input class="form-control form-control-sm" id="formFileSm" type="file">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Guardar</button>
-        </div>
+          <form [formGroup]="personaForm" (ngSubmit)="agregarDatos()" method="POST" novalidate #form="ngForm">
+            <div class="mb-3">
+              <label for="formFileSm" class="form-label">Editar foto de perfil</label>
+              <input class="form-control form-control-sm" name="foto" id="fotoSM" formControlName="foto" type="file">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Título</label>
+              <input class="form-control" type="text" placeholder="Editar" name="titulo" id="tituloSM" formControlName="titulo" aria-label="default input example">
+            </div>
+            <br>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Descripción de la ocupación</label>
+              <input class="form-control" type="text" placeholder="Editar" name="descrip" id="descripSM" formControlName="descrip" aria-label="default input example">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" (click)="limpiar()" class="btn btn-primary">Limpiar</button>
+            </div>
+          </form>
+        </div> 
       </div>
     </div>
   </div>
