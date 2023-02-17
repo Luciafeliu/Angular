@@ -26,7 +26,6 @@ import { LogoutComponent } from './modales/logout/logout.component';
 import { FotoinfoComponent } from './modales/fotoinfo/fotoinfo.component';
 import { InfopersonalComponent } from './componentes/administrador/infopersonal/infopersonal.component';
 import { BanneradminComponent } from './componentes/administrador/banneradmin/banneradmin.component';
-import { InfoComponent } from './modales/info/info.component';
 import { ExpComponent } from './modales/exp/exp.component';
 import { ExpadminComponent } from './componentes/administrador/expadmin/expadmin.component';
 import { EducacionadminComponent } from './componentes/administrador/educacionadmin/educacionadmin.component';
@@ -59,7 +58,6 @@ import { ContactoComponent } from './modales/contacto/contacto.component';
     FotoinfoComponent,
     InfopersonalComponent,
     BanneradminComponent,
-    InfoComponent,
     ExpComponent,
     ExpadminComponent,
     EducacionadminComponent,
