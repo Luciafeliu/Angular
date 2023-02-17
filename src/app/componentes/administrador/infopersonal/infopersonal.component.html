@@ -2,7 +2,7 @@
 <!--Foto e info-->
 <div *ngFor="let persona of persona">
   <div class="foto_nombre">
-    <img id="yo" src="../../../../assets/foto-personal.jpg" alt="Lucía Feliú">
+    <img id="yo" src={{persona.imagen}} alt="Lucía Feliú">
     <h2>{{persona.nombre}} {{persona.apellido}}</h2>
   </div>
   <div class="sobre_mi"> 

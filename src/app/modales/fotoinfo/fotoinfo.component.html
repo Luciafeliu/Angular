@@ -6,10 +6,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form [formGroup]="personaForm" (ngSubmit)="agregarDatos()" method="POST" novalidate #form="ngForm">
+          <form [formGroup]="personaForm" (ngSubmit)="editarDatos()" method="POST" novalidate #form="ngForm">
             <div class="mb-3">
               <label for="formFileSm" class="form-label">Editar foto de perfil</label>
-              <input class="form-control form-control-sm" name="foto" id="fotoSM" formControlName="foto" type="file">
+              <input class="form-control form-control-sm" name="foto" id="fotoSM" formControlName="foto" type="file" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" >
+              <br>
+              <input class="form-control form-control-sm" placeholder="Cambiar nombre" name="nombre" id="nombreSM" formControlName="nombre" type="text">
+              <br>
+              <input class="form-control form-control-sm" placeholder="Cambiar apellido" name="apellido" id="apellidoSM" formControlName="apellido" type="text" >
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Título</label>
@@ -23,7 +27,6 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn btn-primary">Guardar</button>
-              <button type="button" (click)="limpiar()" class="btn btn-primary">Limpiar</button>
             </div>
           </form>
         </div> 

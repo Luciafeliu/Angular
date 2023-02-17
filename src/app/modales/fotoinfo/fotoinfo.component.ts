@@ -19,6 +19,7 @@ export class FotoinfoComponent {
       fin : ['', [Validators.required]],
       inicio : ['', [Validators.required]],
       titulo : ['', [Validators.required]],
+      imagen : ['', [Validators.required]],
     })
   }
 
@@ -61,13 +62,12 @@ export class FotoinfoComponent {
     this.personaForm.reset(); 
   }
 
-  agregarDatos():void{
-    this.personaService.save(this.personaForm.value).subscribe(data => {
-      alert("Datos creados");
-      window.location.reload();
-    }, err => {
-      alert ("Se ha producido un error intentando crear los datos, por favor intente nuevamente.");
-    });
+  editarDatos():void{
+  
+  }
+
+  uploadImage($event:any){
+
   }
 
 }

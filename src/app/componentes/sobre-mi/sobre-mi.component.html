@@ -1,10 +1,12 @@
-<div class="foto_nombre">
-  <img id="yo" src="../../../../assets/foto-personal.jpg" alt="Lucía Feliú">
-  <h2> Lucía Feliú </h2>
-</div>
-<div class="sobre_mi"> 
-  <h3>Full Stack Developer Junior.</h3> 
-  <p *ngFor="let persona of persona">{{persona.descripcion}} Actualmente estudiando Arquitectura en la Universidad Nacional de Córdoba, Argentina. <br> Realizando el curso de Argentina Programa, #YoProgramo.</p>
-  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="fa-solid fa-pencil"></i></button>
+<div *ngFor="let persona of persona">
+  <div class="foto_nombre">
+    <img id="yo" src={{persona.imagen}} alt="Lucía Feliú">
+    <h2>{{persona.nombre}} {{persona.apellido}}</h2>
+  </div>
+  <div class="sobre_mi"> 
+    <h3>{{persona.ocupacion}}</h3> 
+    <p >{{persona.descripcion}} <br> Realizando el curso de Argentina Programa, #YoProgramo.</p>
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#fotoinfoModal"><i class="fa-solid fa-pencil"></i></button>
+  </div>
 </div>
 
