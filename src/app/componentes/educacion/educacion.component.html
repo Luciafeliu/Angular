@@ -1,11 +1,15 @@
+<hr>
 <h2 class="titulo_exp">Educación</h2>
-<div class="box_secundaria">
-    <div class="textos" *ngFor="let estudio of educacion">
-        <ul>
-       <li>{{ estudio.inicio }}/{{ estudio.fin }}- <b>{{ estudio.estado }}</b>{{ estudio.descripcion }} {{ estudio.institucion }}</li>
-
-
-        </ul>
-    </div>
-
-  </div>
+<hr>
+<div class="contenedor_secundario">
+    <div class="box_secundaria">
+        <div class="textos" *ngFor="let estudio of educacion">
+            <ul>
+           <li>{{ estudio.inicio }}/{{ estudio.fin }}- <b>{{ estudio.estado }}</b>{{ estudio.descripcion }} {{ estudio.institucion }}</li>
+    
+    
+            </ul>
+        </div>
+    
+      </div>
+</div>

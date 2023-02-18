@@ -12,7 +12,6 @@ export class PersonaService {
   url = 'http://localhost:8080/persona/';
 
 
-
   constructor(private http:HttpClient) { }
 
   public list(): Observable<PersonaModel[]>{
@@ -28,15 +27,8 @@ export class PersonaService {
     return this.http.get<PersonaModel>(this.url+ 'traer/perfil');
 }
   
-    public save(persona: PersonaModel):Observable<any>{
+  public save(persona: PersonaModel):Observable<any>{
       return this.http.post<any>(this.url + 'crear', persona);
     }
 
-    public update(id:number, persona: PersonaModel):Observable<any>{
-      return this.http.put<any>(this.url + `editar/${id}`, persona);
-    }
-
-    public delete(id:number):Observable<any>{
-      return this.http.delete<any>(this.url + `borrar/${id}`);
-    }
 }

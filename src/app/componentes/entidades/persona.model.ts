@@ -1,5 +1,5 @@
 export class PersonaModel {
-    id? : number;
+    id?:number;
     apellido : string;
     descripcion : string;
     nombre : string;

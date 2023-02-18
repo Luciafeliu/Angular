@@ -1,12 +1,13 @@
 <h2 class="titulo_exp"> <b>Experiencia</b> </h2>
-<div class="box_secundaria" *ngFor="let experiencia of experiencia">
-    <div class="contenedor_principal" >
-       <ul>
-           <li class="lista"><b>{{ experiencia.inicio }} {{ experiencia.titulo }}</b> <br> {{ experiencia.area }} </li>
-           <li>{{ experiencia.descripcion }}</li>
-      
-        </ul>
-
-
-  </div>
-  <br>
+<hr>
+<div class="contenedor_secundario">
+    <div class="box_secundaria" *ngFor="let experiencia of experiencia">
+        <div class="contenedor_principal" >
+           <ul>
+               <li class="lista"><b>{{ experiencia.inicio }} {{ experiencia.titulo }}</b> <br> {{ experiencia.area }} </li>
+               <li>{{ experiencia.descripcion }}</li>
+          
+            </ul>
+      </div>
+      <br>
+</div>
