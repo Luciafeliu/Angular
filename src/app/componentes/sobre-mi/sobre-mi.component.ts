@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/servicios/persona.service';
-import { PersonaModel } from '../entidades/persona.model';
+import { Persona } from '../entidades/persona.model';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -8,7 +8,7 @@ import { PersonaModel } from '../entidades/persona.model';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit{
-  persona: PersonaModel []=[];
+  persona: Persona []=[];
 
   constructor(private sPersona: PersonaService){ }
 

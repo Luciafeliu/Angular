@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
-import { PersonaModel } from '../../entidades/persona.model';
+import { Persona } from '../../entidades/persona.model';
 
 @Component({
   selector: 'app-infopersonal',
@@ -9,7 +9,7 @@ import { PersonaModel } from '../../entidades/persona.model';
   styleUrls: ['./Infopersonal.component.css']
 })
 export class InfopersonalComponent implements OnInit{
-  persona: PersonaModel []=[];
+  persona: Persona []=[];
 
   constructor(private sPersona: PersonaService){ }
 
