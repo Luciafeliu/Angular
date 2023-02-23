@@ -14,18 +14,22 @@ export class EducacionadminComponent implements OnInit{
   constructor(private sEducacion: EducacionService){ }
 
   ngOnInit(): void {
-  this.cargarEstudio();
+  this.cargarEducacion();
   }
 
-  public cargarEstudio(): void {
-    this.sEducacion.list().subscribe(data => {this.educacion=data});
+  cargarEducacion(): void{
+    this.sEducacion.list().subscribe(
+      data =>{
+        this.educacion = data;
+      }
+    )
   }
 
   delete(id?: number){
     if(id != undefined){
       this.sEducacion.delete(id).subscribe(
         data => {
-          this.cargarEstudio();
+          this.cargarEducacion();
           alert("Se ha eliminado el estudio correctamente");
           window.location.reload();
         }, err => {

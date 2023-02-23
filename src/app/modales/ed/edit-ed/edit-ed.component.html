@@ -1,0 +1,31 @@
+<div class="modal fade" id="editEdModal" tabindex="-1" aria-labelledby="editEdModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="edModalLabel">Agregar educación</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="educacionForm" method="PUT" novalidate #form="ngForm">
+          <input type="hidden" formControlName="id" name="id" id="id" formControlName="id">
+          <input class="form-control" type="text" placeholder="Editar la descripción de la educación" name="descripcion" id="descripcion" formControlName="descripcion">
+            <br>
+            <input class="form-control" type="text" placeholder="Editar el estado" name="estado" id="estado" formControlName="estado" >
+            <br>
+            <input class="form-control" type="number" placeholder="año de fin" name="fin" id="fin" formControlName="fin">
+            <br>
+            <input class="form-control" type="number" placeholder="año de inicio " name="inicio" id="inicio" formControlName="inicio">
+            <br>
+            <input class="form-control" type="text" placeholder="Editar la institución" name="institucion" id="institucion" formControlName="institucion">
+            <br>
+            <input class="form-control" type="text" placeholder="Editar un título" name="titulo" id="titulo" formControlName="titulo">
+            <br>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" (click)="editarEstudio()" btn btn-primary>Agregar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

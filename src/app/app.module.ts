@@ -33,6 +33,7 @@ import { HabilidadComponent } from './modales/habilidad/habilidad.component';
 import { ProyectosadminComponent } from './componentes/administrador/proyectosadmin/proyectosadmin.component';
 import { ProyectsComponent } from './modales/proyects/proyects.component';
 import { FooteradminComponent } from './componentes/administrador/footeradmin/footeradmin.component';
+import { EditEdComponent } from './modales/ed/edit-ed/edit-ed.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { FooteradminComponent } from './componentes/administrador/footeradmin/fo
     ProyectosadminComponent,
     ProyectsComponent,
     FooteradminComponent,
+    EditEdComponent,
   ],
   imports: [
     BrowserModule,
