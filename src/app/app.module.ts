@@ -34,6 +34,7 @@ import { ProyectosadminComponent } from './componentes/administrador/proyectosad
 import { ProyectsComponent } from './modales/proyects/proyects.component';
 import { FooteradminComponent } from './componentes/administrador/footeradmin/footeradmin.component';
 import { EditEdComponent } from './modales/ed/edit-ed/edit-ed.component';
+import { EditExpComponent } from './modales/exp/edit-exp/edit-exp.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { EditEdComponent } from './modales/ed/edit-ed/edit-ed.component';
     ProyectsComponent,
     FooteradminComponent,
     EditEdComponent,
+    EditExpComponent,
   ],
   imports: [
     BrowserModule,

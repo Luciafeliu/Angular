@@ -23,8 +23,8 @@ export class ExperienciaService {
     return this.httpClient.post<any>(this.url + 'crear', experiencia);
   }
 
-  public edit (experiencia: Experiencia):Observable<any>{
-    return this.httpClient.put<any>(this.url + 'editar', experiencia);
+  public update (experiencia: Experiencia):Observable<any>{
+    return this.httpClient.put<any>(this.url + 'editar/$', experiencia);
   }
 
   public delete(id:number):Observable<any>{
