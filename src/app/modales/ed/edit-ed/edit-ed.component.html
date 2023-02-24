@@ -2,30 +2,78 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="editEdModalLabel">Editar una educación</h1>
+        <h1 class="modal-title fs-5" id="editEdModalLabel">Editar Educación</h1>
+        
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <form [formGroup]="educacionForm" method="PUT" novalidate #form="ngForm">
-          <input type="hidden" formControlName="id" name="id" id="id" formControlName="id">
-          <input class="form-control" type="text" placeholder="Editar la descripción de la educación" name="descripcion" id="descripcion" formControlName="descripcion">
-            <br>
-            <input class="form-control" type="text" placeholder="Editar el estado" name="estado" id="estado" formControlName="estado" >
-            <br>
-            <input class="form-control" type="number" placeholder="año de fin" name="fin" id="fin" formControlName="fin">
-            <br>
-            <input class="form-control" type="number" placeholder="año de inicio " name="inicio" id="inicio" formControlName="inicio">
-            <br>
-            <input class="form-control" type="text" placeholder="Editar la institución" name="institucion" id="institucion" formControlName="institucion">
-            <br>
-            <input class="form-control" type="text" placeholder="Editar un título" name="titulo" id="titulo" formControlName="titulo">
-            <br>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" (click)="editarEstudio()" class="btn btn-primary">Editar</button>
+
+      <form [formGroup]="educacionForm" name="educacionForm">
+        <div class="modal-body">
+        
+          <ul class="p-0">
+            <li *ngFor="let estudio of educacion" class="d-flex justify-content-between align-items-center m-1 ">
+              <span>{{estudio.id}}. {{estudio.titulo}}</span>
+              <span class="d-flex justify-content-between gap-2">
+              
+                <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(estudio.id)">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+              </span>
+            </li>
+          </ul>
+<!--esto es la validacion  renderizado condicional-->
+          <div class="input-group mb-3 bg-light" *ngIf="!educacionForm.value.id">
+            <div class="input-group-prepend border-0">
+              <span class="input-group-text border-0" id="basic-addon1">ID:</span>
             </div>
-        </form>
-      </div>
+            <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+          </div>
+
+
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Título</label>
+            <input type="text" class="form-control" id="titulo" placeholder="campo obligatorio" formControlName="titulo" [ngClass]="{'is-invalid': educacionForm.get('titulo')?.errors && educacionForm.get('titulo')?.touched, 'is-valid': educacionForm.get('titulo')?.errors && educacionForm.get('titulo')?.touched}">
+            <p class="text-danger"
+              *ngIf="educacionForm.get('titulo')?.touched && educacionForm.get('titulo')?.errors?.['required']">
+              El título de la experiencia es requerido.
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"[ngClass]="{'is-invalid': educacionForm.get('descripcion')?.errors && educacionForm.get('descripcion')?.touched, 'is-valid': educacionForm.get('descripcion')?.errors && educacionForm.get('descripcion')?.touched}">
+            <p class="text-danger"
+              *ngIf="educacionForm.get('descripcion')?.touched && educacionForm.get('descripcion')?.errors?.['required']">
+                  La descripción es obligatoria.
+                </p>
+              </div>
+
+            <div class="mb-3">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="estado" placeholder="" formControlName="estado">
+            </div>
+
+            <div class="mb-3">
+              <label for="institucion" class="form-label">Institución</label>
+              <input type="text" class="form-control" id="institucion" placeholder="" formControlName="institucion">
+            </div>
+
+            <div class="mb-3">
+              <label for="inicio" class="form-label">Fecha de inicio</label>
+              <input type="number" class="form-control" id="inicio" placeholder="" formControlName="inicio">
+            </div>
+
+            <div class="mb-3">
+              <label for="fin" class="form-label">Fecha de finalización</label>
+              <input type="number" class="form-control" id="fin" placeholder="" formControlName="fin">
+            </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="educacionForm.reset()">Limpiar</button>
+            <button class="btn btn-secondary" (click)="guardar()"[disabled]="educacionForm.invalid">Guardar los datos</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

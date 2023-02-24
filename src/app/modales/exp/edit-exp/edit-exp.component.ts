@@ -11,6 +11,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 export class EditExpComponent implements OnInit{
   experienciaForm: FormGroup;
   experiencia: Experiencia []=[];
+  
 
   constructor(private experienciaService: ExperienciaService, private formBuilder: FormBuilder, private sExperiencia: ExperienciaService){
     this.experienciaForm = this.formBuilder.group({
@@ -28,11 +29,12 @@ export class EditExpComponent implements OnInit{
     }
   
     public cargarExperiencia(): void {
-      this.sExperiencia.list().subscribe(data => {this.experiencia=data});
+      this.sExperiencia.list().subscribe(
+        data => {this.experiencia=data});
     }
 
 
-    get idExp(){
+    get id(){
       return this.experienciaForm.get("id");
     }
   
@@ -55,8 +57,50 @@ export class EditExpComponent implements OnInit{
     get titulo(){
       return this.experienciaForm.get("titulo");
     }
+
+    cargarDetalle(id: number) {
+      this.sExperiencia.detail(id).subscribe(
+        {
+          next: (data) => {
+            this.experienciaForm.setValue(data);
+          },
+          error: (e) => {
+            console.error(e)
+            alert("Ha ocurrido un error al modificar")
+          },
+          complete: () => console.info('Completado')
+        }
+      )
+    }
+   
   
-    editarExperiencia():void{
+  
+    guardar() {
+      console.log("OK")
+      let exp = this.experienciaForm.value;
+      console.log()
+  
+      if (exp.id == '') {
+        this.experienciaService.save(exp).subscribe(
+          data => {
+            alert("Su nueva Experiencia fue añadida correctamente");
+            this.cargarExperiencia();
+            this.experienciaForm.reset();
+          }
+        )
+      } else {
+        this.sExperiencia.update(exp).subscribe(
+          data => {
+            alert("Experiencia editada");
+            this.cargarExperiencia();
+            this.experienciaForm.reset();
+          }
+        )
+      }
+    }
+  
+  
+   /* editarExperiencia():void{
       this.experienciaService.update(this.experienciaForm.value).subscribe(data => {
         this.cargarExperiencia();
         this.experienciaForm.reset;
@@ -65,5 +109,8 @@ export class EditExpComponent implements OnInit{
       }, err => {
         alert ("Se ha producido un error intentando actualizar la experiencia, por favor intente nuevamente.");
       });
-    }
-}
+    }*/
+  } 
+   
+
+

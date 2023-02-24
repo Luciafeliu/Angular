@@ -1,4 +1,4 @@
-<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -7,7 +7,11 @@
         </div>
         <div class="modal-body">
           <form [formGroup]="experienciaForm" method="PUT" novalidate #form="ngForm">
-            <input type="hidden" formControlName="id" name="id" id="id" formControlName="id">
+            <div class="input-group mb-3 bg-light" *ngIf="!form.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+            </div>
             <input class="form-control" type="text" placeholder="Editar el área de la experiencia" name="area" id="area" formControlName="area">
               <br>
               <input class="form-control" type="text" placeholder="Editar la descripción" name="descripcion" id="descripcion" formControlName="descripcion" >
@@ -24,6 +28,80 @@
               </div>
           </form>
         </div>
+      </div>
+    </div>
+  </div>-->
+  <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editarModalLabel">Editar experiencias</h1>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <form [formGroup]="experienciaForm" name="experienciaForm">
+          <div class="modal-body">
+          
+            <ul class="p-0">
+              <li *ngFor="let experiencia of experiencia" class="d-flex justify-content-between align-items-center m-1 ">
+                <span>{{experiencia.id}}. {{experiencia.titulo}}</span>
+                <span class="d-flex justify-content-between gap-2">
+                <!--lapicito rojo que se cambia al tocarlo-->
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(experiencia.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
+  <!--esto es la validacion  renderizado condicional-->
+            <div class="input-group mb-3 bg-light" *ngIf="!experienciaForm.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
+  
+  
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Título</label>
+              <input type="text" class="form-control" id="titulo" placeholder="campo obligatorio" formControlName="titulo" [ngClass]="{'is-invalid': experienciaForm.get('titulo')?.errors && experienciaForm.get('titulo')?.touched, 'is-valid': experienciaForm.get('titulo')?.errors && experienciaForm.get('titulo')?.touched}">
+              <p class="text-danger"
+                *ngIf="experienciaForm.get('titulo')?.touched && experienciaForm.get('titulo')?.errors?.['required']">
+                El título de la experiencia es requerido.
+              </p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"[ngClass]="{'is-invalid': experienciaForm.get('descripcion')?.errors && experienciaForm.get('descripcion')?.touched, 'is-valid': experienciaForm.get('descripcion')?.errors && experienciaForm.get('descripcion')?.touched}">
+              <p class="text-danger"
+                *ngIf="experienciaForm.get('descripcion')?.touched && experienciaForm.get('descripcion')?.errors?.['required']">
+                    La descripción es obligatoria.
+                  </p>
+                </div>
+  
+              <div class="mb-3">
+                <label for="area" class="form-label">Área</label>
+                <input type="text" class="form-control" id="area" placeholder="" formControlName="area">
+              </div>
+  
+              <div class="mb-3">
+                <label for="inicio" class="form-label">Fecha de inicio</label>
+                <input type="number" class="form-control" id="inicio" placeholder="" formControlName="inicio">
+              </div>
+  
+              <div class="mb-3">
+                <label for="fin" class="form-label">Fecha de finalización</label>
+                <input type="number" class="form-control" id="fin" placeholder="" formControlName="fin">
+              </div>
+  
+            <div class="modal-footer">
+              <button class="btn btn-secondary" (click)="experienciaForm.reset()">Limpiar</button>
+              <button class="btn btn-secondary" (click)="guardar()"[disabled]="experienciaForm.invalid">Guardar los datos</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

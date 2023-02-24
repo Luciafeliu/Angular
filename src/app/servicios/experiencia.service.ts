@@ -24,7 +24,7 @@ export class ExperienciaService {
   }
 
   public update (experiencia: Experiencia):Observable<any>{
-    return this.httpClient.put<any>(this.url + 'editar/$', experiencia);
+    return this.httpClient.post<any>(this.url + `editar/$`, experiencia);
   }
 
   public delete(id:number):Observable<any>{

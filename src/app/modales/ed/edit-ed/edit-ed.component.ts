@@ -61,18 +61,46 @@ export class EditEdComponent implements OnInit{
       return this.educacionForm.get("Titulo");
     }
   
-    limpiar(): void{
-      this.educacionForm.reset(); 
+    cargarDetalle(id: number) {
+      this.sEducacion.detail(id).subscribe(
+        {
+          next: (data) => {
+            this.educacionForm.setValue(data);
+          },
+          error: (e) => {
+            console.error(e)
+            alert("Ha ocurrido un error al modificar")
+          },
+          complete: () => console.info('Completado')
+        }
+      )
+    }
+   
+  
+  
+    guardar() {
+      console.log("OK")
+      let exp = this.educacionForm.value;
+      console.log()
+  
+      if (exp.id == '') {
+        this.educacionService.save(exp).subscribe(
+          data => {
+            alert("Su nueva Educación fue añadida correctamente");
+            this.cargarEstudio();
+            this.educacionForm.reset();
+          }
+        )
+      } else {
+        this.sEducacion.update(exp).subscribe(
+          data => {
+            alert("Educación editada");
+            this.cargarEstudio();
+            this.educacionForm.reset();
+          }
+        )
+      }
     }
   
-    editarEstudio():void{
-      this.educacionService.update(this.educacionForm.value).subscribe(data => {
-        this.cargarEstudio();
-        this.educacionForm.reset;
-        alert("Educacion actualizada");
-        window.location.reload();
-      }, err => {
-        alert ("Se ha producido un error intentando actualizar la educacion, por favor intente nuevamente.");
-      });
-    }
+  
 }
