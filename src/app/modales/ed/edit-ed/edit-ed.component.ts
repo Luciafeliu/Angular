@@ -97,6 +97,7 @@ export class EditEdComponent implements OnInit{
             alert("Educación editada");
             this.cargarEstudio();
             this.educacionForm.reset();
+            window.location.reload();
           }
         )
       }

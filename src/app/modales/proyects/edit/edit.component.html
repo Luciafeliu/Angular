@@ -1,0 +1,63 @@
+<div class="modal fade" id="editarProModal" tabindex="-1" aria-labelledby="editarProModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editarProModalLabel">Editar Proyecto</h1>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <form [formGroup]="proyectoForm" name="proyectoForm">
+          <div class="modal-body">
+          
+            <ul class="p-0">
+              <li *ngFor="let proyecto of proyecto" class="d-flex justify-content-between align-items-center m-1 ">
+                <span>{{proyecto.id}}. {{proyecto.nombre}}</span>
+                <span class="d-flex justify-content-between gap-2">
+                
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(proyecto.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
+            <div class="input-group mb-3 bg-light" *ngIf="!proyectoForm.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
+  
+  
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre" [ngClass]="{'is-invalid': proyectoForm.get('nombre')?.errors && proyectoForm.get('nombre')?.touched, 'is-valid': proyectoForm.get('nombre')?.errors && proyectoForm.get('nombre')?.touched}">
+              <p class="text-danger"
+                *ngIf="proyectoForm.get('nombre')?.touched && proyectoForm.get('nombre')?.errors?.['required']">
+                El nombre del proyecto es requerido.
+              </p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"[ngClass]="{'is-invalid': proyectoForm.get('descripcion')?.errors && proyectoForm.get('descripcion')?.touched, 'is-valid': proyectoForm.get('descripcion')?.errors && proyectoForm.get('descripcion')?.touched}">
+              <p class="text-danger"
+                *ngIf="proyectoForm.get('descripcion')?.touched && proyectoForm.get('descripcion')?.errors?.['required']">
+                    La descripción es obligatoria.
+                  </p>
+                </div>
+  
+              <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen</label>
+                <input type="url" class="form-control" id="imagen" placeholder="" formControlName="imagen">
+              </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" (click)="proyectoForm.reset()">Limpiar</button>
+              <button class="btn btn-secondary" (click)="guardar()"[disabled]="proyectoForm.invalid">Editar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

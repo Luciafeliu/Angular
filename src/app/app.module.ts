@@ -35,6 +35,8 @@ import { ProyectsComponent } from './modales/proyects/proyects.component';
 import { FooteradminComponent } from './componentes/administrador/footeradmin/footeradmin.component';
 import { EditEdComponent } from './modales/ed/edit-ed/edit-ed.component';
 import { EditExpComponent } from './modales/exp/edit-exp/edit-exp.component';
+import { EditComponent } from './modales/proyects/edit/edit.component';
+import { EditarSobremiComponent } from './modales/sobremi/editar-sobremi/editar-sobremi.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { EditExpComponent } from './modales/exp/edit-exp/edit-exp.component';
     FooteradminComponent,
     EditEdComponent,
     EditExpComponent,
+    EditComponent,
+    EditarSobremiComponent,
   ],
   imports: [
     BrowserModule,

@@ -23,8 +23,8 @@ export class ProyectoService {
     return this.httpClient.post<any>(this.url + 'crear', proyecto);
   }
 
-  public update(id:number, proyecto: Proyecto):Observable<any>{
-    return this.httpClient.put<any>(this.url + `detail/${id}`, proyecto);
+  public update(proyecto: Proyecto):Observable<any>{
+    return this.httpClient.post<any>(this.url + `editar/$`, proyecto);
   }
 
   public delete(id:number):Observable<any>{

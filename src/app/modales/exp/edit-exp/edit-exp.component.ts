@@ -94,6 +94,7 @@ export class EditExpComponent implements OnInit{
             alert("Experiencia editada");
             this.cargarExperiencia();
             this.experienciaForm.reset();
+            window.location.reload();
           }
         )
       }

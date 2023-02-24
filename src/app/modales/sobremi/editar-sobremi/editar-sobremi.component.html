@@ -1,0 +1,74 @@
+<div class="modal fade" id="editarSobremiModal" tabindex="-1" aria-labelledby="editarSobremiModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editarSobremiModalLabel">Editar Proyecto</h1>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <form [formGroup]="personaForm" name="personaForm">
+          <div class="modal-body">
+          
+            <ul class="p-0">
+              <li *ngFor="let persona of persona" class="d-flex justify-content-between align-items-center m-1 ">
+                <span>{{persona.id}}. {{persona.nombre}}</span>
+                <span class="d-flex justify-content-between gap-2">
+                
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(persona.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
+            <div class="input-group mb-3 bg-light" *ngIf="!personaForm.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
+  
+  
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre" [ngClass]="{'is-invalid': personaForm.get('nombre')?.errors && personaForm.get('nombre')?.touched, 'is-valid': personaForm.get('nombre')?.errors && personaForm.get('nombre')?.touched}">
+              <p class="text-danger"
+                *ngIf="personaForm.get('nombre')?.touched && personaForm.get('nombre')?.errors?.['required']">
+                El nombre es requerido.
+              </p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" formControlName="apellido" placeholder="campo obligatorio"[ngClass]="{'is-invalid': personaForm.get('apellido')?.errors && personaForm.get('apellido')?.touched, 'is-valid': personaForm.get('apellido')?.errors && personaForm.get('apellido')?.touched}">
+              <p class="text-danger"
+                *ngIf="personaForm.get('apellido')?.touched && personaForm.get('apellido')?.errors?.['required']">
+                    El apellido es requerido.
+                  </p>
+                </div>
+  
+              <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen</label>
+                <input type="url" class="form-control" id="imagen" placeholder="" formControlName="imagen">
+              </div>
+
+              <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" placeholder="" formControlName="descripcion">
+              </div>
+
+              <div class="mb-3">
+                <label for="ocupacion" class="form-label">Ocupación</label>
+                <input type="text" class="form-control" id="ocupacion" placeholder="" formControlName="ocupacion">
+              </div>
+
+            <div class="modal-footer">
+              <button class="btn btn-secondary" (click)="personaForm.reset()">Limpiar</button>
+              <button class="btn btn-secondary" (click)="guardar()"[disabled]="personaForm.invalid">Editar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

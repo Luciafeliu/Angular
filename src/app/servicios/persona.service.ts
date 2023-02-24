@@ -26,6 +26,10 @@ export class PersonaService {
   public getPersona(): Observable<Persona> {
     return this.http.get<Persona>(this.url+ 'traer/perfil');
 }
+
+    public update(persona: Persona):Observable<any>{
+      return this.http.post<any>(this.url + `editar/$`, persona);
+    }
   
   public save(persona: Persona):Observable<any>{
       return this.http.post<any>(this.url + 'crear', persona);
