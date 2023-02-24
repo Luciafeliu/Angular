@@ -53,7 +53,7 @@ export class EditExpComponent implements OnInit{
     }
   
     get titulo(){
-      return this.experienciaForm.get("Titulo");
+      return this.experienciaForm.get("titulo");
     }
   
     editarExperiencia():void{

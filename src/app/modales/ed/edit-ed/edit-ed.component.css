@@ -1,5 +1,5 @@
-#modal-educacion{
-    background-color: rgba(36, 193, 149, 0.546);
+#editEdModal{
+    background-color: #c6dae8;
     backdrop-filter: blur(12px) saturate(90%) brightness(120%);
     --bs-modal-width: 600px;
     --bs-modal-padding: 1rem;

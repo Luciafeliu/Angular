@@ -12,15 +12,23 @@ html {
     body {
     margin: 0;
     background: #FFAFBD;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #ffc3a0, #afe3ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc3a0, #afe3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     }
 
     li{
         list-style: none;
     }
+
+    .titulo_exp h2 {
+      color: rgba(204, 218, 230, 0.415);
+      font-size: 0.5em;
+    }
     
+    .list-group-item{
+      background-color: transparent;
+    }
 
     .head {
     background-color: #14213d;

@@ -1,5 +1,5 @@
 export class Experiencia {
-    id? : number;
+    id : number;
     area : string;
     descripcion : string;
     fin : number;
