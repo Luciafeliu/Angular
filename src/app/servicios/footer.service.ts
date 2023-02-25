@@ -7,7 +7,7 @@ import { Footer } from '../componentes/entidades/footer';
   providedIn: 'root'
 })
 export class FooterService {
-  url= 'backend-luciafeliu.koyeb.app/footer/'
+  url= 'https://backend-luciafeliu.koyeb.app/footer/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Footer[]>{

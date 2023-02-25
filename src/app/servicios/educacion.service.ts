@@ -7,7 +7,7 @@ import { Educacion } from '../componentes/entidades/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  url= 'backend-luciafeliu.koyeb.app/estudio/'
+  url= 'https://backend-luciafeliu.koyeb.app/estudio/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Educacion[]>{

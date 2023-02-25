@@ -7,7 +7,7 @@ import { Banner } from '../componentes/entidades/banner';
   providedIn: 'root'
 })
 export class BannerService {
-  url= 'backend-luciafeliu.koyeb.app/banner/';
+  url= 'https://backend-luciafeliu.koyeb.app//banner/';
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Banner[]>{

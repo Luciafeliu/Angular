@@ -13,7 +13,7 @@ import { JwtDto } from '../componentes/entidades/jwt-dto';
 })
 export class AuthService {
 
-  authURL = 'backend-luciafeliu.koyeb.app/auth/';
+  authURL = 'https://backend-luciafeliu.koyeb.app/auth/';
 
  constructor(private httpClient: HttpClient){ }
 

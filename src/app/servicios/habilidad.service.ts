@@ -7,7 +7,7 @@ import { Habilidad } from '../componentes/entidades/habilidad';
   providedIn: 'root'
 })
 export class HabilidadService {
-  url= 'backend-luciafeliu.koyeb.app/habilidad/'
+  url= 'https://backend-luciafeliu.koyeb.app/habilidad/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Habilidad[]>{

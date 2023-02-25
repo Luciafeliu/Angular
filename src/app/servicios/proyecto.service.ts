@@ -7,7 +7,7 @@ import { Proyecto } from '../componentes/entidades/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  url= 'backend-luciafeliu.koyeb.app/proyecto/'
+  url= 'https://backend-luciafeliu.koyeb.app/proyecto/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Proyecto[]>{

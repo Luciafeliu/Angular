@@ -9,7 +9,7 @@ import { Persona } from '../componentes/entidades/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-  url = 'backend-luciafeliu.koyeb.app/persona/';
+  url = 'https://backend-luciafeliu.koyeb.app/persona/';
 
 
   constructor(private http:HttpClient) { }

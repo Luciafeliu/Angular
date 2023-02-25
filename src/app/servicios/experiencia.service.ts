@@ -7,7 +7,7 @@ import { Experiencia } from '../componentes/entidades/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  url= 'backend-luciafeliu.koyeb.app/experiencia/';
+  url= 'https://backend-luciafeliu.koyeb.app/experiencia/';
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Experiencia[]>{
