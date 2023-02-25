@@ -7,7 +7,7 @@ import { Proyecto } from '../componentes/entidades/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  url= 'http://localhost:8080/proyecto/'
+  url= 'backend-luciafeliu.koyeb.app/proyecto/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Proyecto[]>{
